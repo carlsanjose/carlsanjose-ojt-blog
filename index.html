@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Journal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-2 sm:p-4">
+        <!-- Animated background pattern -->
+        <div class="fixed inset-0 opacity-10 pointer-events-none">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_30%,rgba(255,255,255,0.1)_32%,transparent_34%)] bg-[length:20px_20px] sm:bg-[length:20px_20px]"></div>
+        </div>
+
+        <div class="container mx-auto relative z-10 max-w-7xl">
+            <!-- Header with pixelated styling - Mobile responsive -->
+            <div class="text-center mb-8 sm:mb-12 relative">
+                <div class="inline-block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 p-1 rounded-none mb-4 sm:mb-6 shadow-[0_0_20px_rgba(168,85,247,0.4)] animate-pulse">
+                    <div class="bg-slate-900 px-4 py-2 sm:px-8 sm:py-4 rounded-none">
+                        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 tracking-wider filter drop-shadow-lg">
+                            ⚡ TRAINING JOURNAL ⚡
+                        </h1>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-800 border-4 border-cyan-400 rounded-none px-4 py-4 sm:px-8 sm:py-6 shadow-[0_0_30px_rgba(34,211,238,0.3)] transform hover:scale-105 transition-transform duration-300">
+                    <p class="text-base sm:text-lg md:text-xl font-bold text-cyan-300 mb-2 tracking-wide">
+                        📊 DAILY PROGRESS TRACKER 📊
+                    </p>
+                    <div class="bg-gradient-to-r from-purple-600 to-pink-600 p-3 sm:p-4 rounded-none border-2 border-white">
+                        <p class="text-sm sm:text-base md:text-lg font-black text-white tracking-widest">
+                            CARL EDWARD L. SAN JOSE
+                        </p>
+                        <p class="text-xs sm:text-sm md:text-base font-bold text-yellow-300 tracking-widest">
+                            BSCS 3B • BU ICTO
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posts grid with pixelated cards - Mobile responsive -->
+            <div id="posts-grid" class="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Posts will be dynamically generated here -->
+            </div>
+
+            <!-- Pixelated expanded post overlay - Mobile responsive -->
+            <div id="expanded-overlay" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-2 sm:p-4 z-50 backdrop-blur-sm hidden">
+                <div class="bg-white rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] border-4 border-cyan-400 max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto">
+                    <!-- Pixelated header - Mobile responsive -->
+                    <div class="sticky top-0 bg-gradient-to-r from-cyan-500 to-purple-500 border-b-4 border-black p-3 sm:p-4 md:p-6 flex items-center justify-between">
+                        <div class="flex items-center gap-2 sm:gap-4 min-w-0 flex-1">
+                            <div id="expanded-entry-number" class="bg-black text-white px-2 py-1 sm:px-4 sm:py-2 rounded-none font-black tracking-wider text-xs sm:text-sm flex-shrink-0">
+                                ENTRY #1
+                            </div>
+                            <h2 id="expanded-title" class="text-sm sm:text-lg md:text-2xl font-black text-white drop-shadow-lg truncate">
+                                Title goes here
+                            </h2>
+                        </div>
+                        <button id="close-expanded" class="bg-red-500 hover:bg-red-600 text-white font-black px-3 py-2 sm:px-4 sm:py-2 rounded-none border-2 border-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 ml-2 flex-shrink-0">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Content - Mobile responsive -->
+                    <div class="p-4 sm:p-6 md:p-8 bg-white">
+                        <div class="flex items-center gap-2 text-xs sm:text-sm bg-gray-100 px-3 py-2 sm:px-4 sm:py-3 border-2 border-black rounded-none mb-4 sm:mb-6">
+                            <svg class="w-3 h-3 sm:w-4 sm:h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12,6 12,12 16,14"></polyline>
+                            </svg>
+                            <span id="expanded-date" class="font-bold text-black">
+                                Date goes here
+                            </span>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-yellow-100 to-orange-100 p-4 sm:p-6 border-4 border-black rounded-none mb-6 sm:mb-8">
+                            <p id="expanded-excerpt" class="text-gray-800 font-bold text-base sm:text-lg leading-relaxed">
+                                Excerpt goes here
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 sm:p-6 border-l-4 sm:border-l-8 border-purple-500 rounded-none">
+                            <div id="expanded-content" class="whitespace-pre-wrap text-sm sm:text-base leading-relaxed text-gray-800 font-medium">
+                                Content goes here
+                            </div>
+                        </div>
+                        
+                        <!-- Footer - Mobile responsive -->
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-6 sm:mt-8 pt-4 sm:pt-6 border-t-4 border-black">
+                            <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-2 border-black rounded-none px-3 py-2 sm:px-4 sm:py-2 font-black tracking-wider shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-xs sm:text-sm">
+                                <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <span id="expanded-views">0</span> TOTAL VIEWS
+                            </div>
+                            <div id="expanded-updated" class="text-xs sm:text-sm bg-gray-800 text-white px-2 py-1 sm:px-3 sm:py-2 rounded-none border border-black font-bold">
+                                CREATED Date
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hard-coded blog posts
+        const hardCodedPosts = [
+            {
+                id: 1,
+                title: "Day 1: Getting Started with On-the-Job Training",
+                excerpt: "My first day at the company was eventful. I was introduced to the team and given an overview of the training program.",
+                content: `Today marked the beginning of my on-the-job training journey. The morning started with a warm welcome from my supervisor and the entire team. I was given a comprehensive overview of the company structure, policies, and my specific role within the organization.
+
+The training coordinator explained the 240-hour program timeline and the various skills I would be developing. I was assigned a mentor who will guide me through the learning process. The day included:
+
+- Introduction to team members and their roles
+- Overview of the project management system
+- Basic computer setup and access permissions
+- Initial assessment of my current skills
+- Task assignments
+
+I'm excited about the learning opportunities ahead and looking forward to contributing to real projects while gaining valuable experience.`,
+                created_at: "2025-06-13",
+                updated_at: "2025-06-13",
+                views_count: 45,
+                color: "bg-red-500"
+            }
+        ]; // ------------------------------------ ** END OF THE BLOG POSTS **
+
+        // State management
+        let expandedPost = null;
+
+        // Helper function to format date
+        function formatDate(dateString) {
+            return new Date(dateString).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+        // Function to toggle expanded post
+        function toggleExpanded(postId) {
+            if (expandedPost === postId) {
+                expandedPost = null;
+                document.getElementById('expanded-overlay').classList.add('hidden');
+            } else {
+                expandedPost = postId;
+                showExpandedPost(postId);
+            }
+        }
+
+        // Function to show expanded post
+        function showExpandedPost(postId) {
+            const post = hardCodedPosts.find(p => p.id === postId);
+            if (!post) return;
+
+            // Update expanded post content
+            document.getElementById('expanded-entry-number').textContent = `ENTRY #${post.id}`;
+            document.getElementById('expanded-title').textContent = post.title;
+            document.getElementById('expanded-date').textContent = formatDate(post.created_at);
+            document.getElementById('expanded-excerpt').textContent = post.excerpt;
+            document.getElementById('expanded-content').textContent = post.content;
+            document.getElementById('expanded-views').textContent = post.views_count;
+            
+            const updatedText = post.updated_at !== post.created_at ? 'UPDATED' : 'CREATED';
+            document.getElementById('expanded-updated').textContent = `${updatedText} ${formatDate(post.updated_at)}`;
+
+            // Show the overlay
+            document.getElementById('expanded-overlay').classList.remove('hidden');
+        }
+
+        // Function to close expanded post
+        function closeExpanded() {
+            expandedPost = null;
+            document.getElementById('expanded-overlay').classList.add('hidden');
+        }
+
+        // Function to render posts
+        function renderPosts() {
+            const postsGrid = document.getElementById('posts-grid');
+            postsGrid.innerHTML = '';
+
+            hardCodedPosts.forEach((post, index) => {
+                const postCard = document.createElement('div');
+                postCard.className = `${post.color} border-4 border-white rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,0.8)] transform hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 cursor-pointer overflow-hidden`;
+
+                postCard.innerHTML = `
+                    <!-- Pixelated header stripe -->
+                    <div class="h-3 bg-gradient-to-r from-yellow-400 to-orange-400 border-b-2 border-black"></div>
+                    
+                    <div class="bg-white border-b-4 border-black p-3 sm:p-4 md:p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="bg-black text-white px-2 py-1 sm:px-3 sm:py-1 rounded-none text-xs font-black tracking-wider">
+                                ENTRY #${post.id}
+                            </div>
+                            <div class="flex items-center gap-1 sm:gap-2">
+                                <div class="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-none border border-black"></div>
+                                <div class="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-none border border-black"></div>
+                                <div class="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-none border border-black"></div>
+                            </div>
+                        </div>
+                        <h2 class="text-base sm:text-lg md:text-xl font-black text-black mb-3 sm:mb-4 leading-tight">
+                            ${post.title}
+                        </h2>
+                        <div class="flex items-center gap-2 text-xs sm:text-sm bg-gray-100 px-2 py-1 sm:px-3 sm:py-2 border-2 border-black rounded-none">
+                            <svg class="w-3 h-3 sm:w-4 sm:h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12,6 12,12 16,14"></polyline>
+                            </svg>
+                            <span class="font-bold text-black">${formatDate(post.created_at)}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-3 sm:p-4 md:p-6 border-b-4 border-black">
+                        <p class="text-gray-800 mb-4 sm:mb-6 line-clamp-3 font-medium leading-relaxed text-sm sm:text-base">
+                            ${post.excerpt}
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 mb-4">
+                            <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-2 border-black rounded-none px-2 py-1 sm:px-3 sm:py-1 font-black tracking-wider shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-xs sm:text-sm">
+                                <svg class="w-3 h-3 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                ${post.views_count} VIEWS
+                            </div>
+                            <div class="text-xs bg-gray-800 text-white px-2 py-1 rounded-none border border-black font-bold">
+                                ${post.updated_at !== post.created_at ? 'UPDATED' : 'CREATED'} ${formatDate(post.updated_at)}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-3 sm:p-4">
+                        <button onclick="toggleExpanded(${post.id})" class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-black py-2 px-4 sm:py-3 sm:px-6 rounded-none border-2 border-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 tracking-widest text-xs sm:text-sm md:text-base">
+                            <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                            LAUNCH DETAILS
+                        </button>
+                    </div>
+                `;
+
+                postsGrid.appendChild(postCard);
+            });
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPosts();
+            
+            // Add close button event listener
+            document.getElementById('close-expanded').addEventListener('click', closeExpanded);
+            
+            // Close overlay when clicking outside
+            document.getElementById('expanded-overlay').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeExpanded();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
