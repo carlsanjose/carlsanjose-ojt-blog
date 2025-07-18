@@ -99,6 +99,7 @@ body {
   z-index: 5;
   transition: opacity 0.3s ease;
   pointer-events: none;
+  overflow: auto;
 }
 
 .overlay.show {
@@ -112,4 +113,60 @@ body {
 
 .post-expanded::-webkit-scrollbar-thumb {
   background-color: #216869;
+}
+
+.post-thumbnail {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  image-rendering: pixelated;
+  border: 2px solid #333;
+  background: #222;
+}
+
+.post-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+  display: block;
+  border: 2px solid #222;
+}
+
+.carousel-image {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border: 2px solid #333;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #222;
+  color: #fff;
+  border: 2px solid #555;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  z-index: 10;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background-color: #444;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
 }
