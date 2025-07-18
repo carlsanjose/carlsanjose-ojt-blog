@@ -1,14 +1,19 @@
 body {
-  font-family: sans-serif;
   margin: 0;
-  padding: 1rem;
-  background-color: #fdfdfd;
-  color: #333;
+  padding: 2rem;
+  background-color: #1F2421; /* Eerie black */
+  color: #DCE1DE; /* Platinum */
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  line-height: 1.6;
 }
 
 .title {
   text-align: center;
+  font-size: 18px;
   margin-bottom: 2rem;
+  color: #49A078; /* Jungle green */
+  text-shadow: 2px 2px #000;
 }
 
 .blog-container {
@@ -19,34 +24,68 @@ body {
 }
 
 .post-tile {
-  width: 300px;
+  width: 280px;
   padding: 1rem;
-  border: 1px solid #ccc;
+  background-color: #9CC5A1; /* Cambridge blue */
+  border: 4px solid #216869; /* Caribbean Current */
+  box-shadow: 6px 6px #1F2421;
   cursor: pointer;
-  transition: background 0.2s;
-  background-color: white;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  color: #1F2421; /* Eerie Black for text */
 }
 
 .post-tile:hover {
-  background-color: #f0f0f0;
+  transform: scale(1.05);
+  background-color: #49A078; /* Jungle Green */
+}
+
+.post-tile h2 {
+  font-size: 12px;
+  color: #216869; /* Caribbean Current */
+  margin-top: 0;
+}
+
+.post-tile em {
+  display: block;
+  color: #1F2421;
+  margin-bottom: 0.5rem;
+  font-size: 9px;
 }
 
 .post-expanded {
   position: fixed;
   top: 10%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(0.95);
+  opacity: 0;
   width: 90%;
   max-width: 600px;
-  background: white;
+  background-color: #DCE1DE; /* Platinum */
   padding: 2rem;
-  border: 1px solid #aaa;
+  border: 4px solid #216869;
+  box-shadow: 8px 8px #1F2421;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: #1F2421;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.post-expanded.show {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .post-expanded h2 {
+  color: #216869;
+  font-size: 14px;
   margin-top: 0;
+}
+
+.post-expanded em {
+  color: #49A078;
+  font-size: 9px;
+  margin-bottom: 1rem;
 }
 
 .overlay {
@@ -55,6 +94,22 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(31, 36, 33, 0.5); /* Eerie black with opacity */
+  opacity: 0;
   z-index: 5;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.post-expanded::-webkit-scrollbar {
+  width: 8px;
+}
+
+.post-expanded::-webkit-scrollbar-thumb {
+  background-color: #216869;
 }
