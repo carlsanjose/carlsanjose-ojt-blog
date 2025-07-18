@@ -181,3 +181,26 @@ body {
 .carousel-btn.right {
   right: 10px;
 }
+
+.highlight-title {
+  font-size: clamp(20px, 5vw, 36px);
+  text-transform: uppercase;
+  color: #49A078;
+  text-shadow: 2px 2px #000, 0 0 10px #49A078;
+  letter-spacing: 2px;
+  animation: pulse-glow 2s infinite;
+}
+
+.journey-word {
+  color: #9CC5A1;
+  text-shadow: 2px 2px #000, 0 0 10px #9CC5A1;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow: 2px 2px #000, 0 0 5px #49A078;
+  }
+  50% {
+    text-shadow: 2px 2px #000, 0 0 15px #49A078;
+  }
+}
