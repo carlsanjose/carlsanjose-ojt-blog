@@ -206,7 +206,7 @@ const posts = [
     title:"OJT Day 28",
     date:"2025-07-22",
     summary:"Continued working.",
-    content:"Today I continued working on the feature we started on yesterday. While also polishing some tiny bugs in the Dashboard.",
+    content:"Today I continued working on the feature we started on yesterday. While also polishing some tiny bugs in the Dashboard. Work was also announced to be suspended tomorrow. And there's Sir Justine sa likod HAHA XD",
     images:[
       "images/july-22.jpg"
     ]
