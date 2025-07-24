@@ -188,4 +188,26 @@ const posts = [
       "images/july18-3.jpg"
     ]
   },
+
+  // DAY 27
+  {
+    title:"OJT Day 27",
+    date:"2025-07-21",
+    summary:"Made some new features and polished existing ones.",
+    content:"This week was the week for finalizations of our assigned tasks. Today we worked on a new feature for downloading the list of posted grades for a block into PDF format. I also had some spare time and decided on learning about Data Compression Algorithms.",
+    images:[
+      
+    ]
+  },
+
+  // DAY 28
+  {
+    title:"OJT Day 28",
+    date:"2025-07-22",
+    summary:"Continued working.",
+    content:"Today I continued working on the feature we started on yesterday. While also polishing some tiny bugs in the Dashboard.",
+    images:[
+      
+    ]
+  },
 ];
