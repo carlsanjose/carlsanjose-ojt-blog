@@ -196,7 +196,8 @@ const posts = [
     summary:"Made some new features and polished existing ones.",
     content:"This week was the week for finalizations of our assigned tasks. Today we worked on a new feature for downloading the list of posted grades for a block into PDF format. I also had some spare time and decided on learning about Data Compression Algorithms.",
     images:[
-      
+      "images/july-21.jpg",
+      "images/july-21-2.jpg"
     ]
   },
 
@@ -207,7 +208,7 @@ const posts = [
     summary:"Continued working.",
     content:"Today I continued working on the feature we started on yesterday. While also polishing some tiny bugs in the Dashboard.",
     images:[
-      
+      "images/july-22.jpg"
     ]
   },
 ];
