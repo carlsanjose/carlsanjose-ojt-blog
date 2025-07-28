@@ -211,4 +211,28 @@ const posts = [
       "images/july-22.jpg"
     ]
   },
+
+  // DAY 29
+  {
+    title:"OJT Day 29",
+    date:"2025-07-26",
+    summary:"Back in business.",
+    content:"After the 3 days suspension caused by heavy rains, I'm thankful that everyone was safe. Today is a Saturday but we wanted to time in to get more work done. Sir Jeff sent over some adjustments to be made with the Faculty Portal Dashboard and Grade Encoding pages, and we made do with what we could start with right away. We were almost done implementing the changes. It felt good to be back in business.",
+    images:[
+      "images/july-26.jpg",
+      "images/july-26-2.jpg"
+    ]
+  },
+
+  // DAY 30
+  {
+    title:"OJT Day 30",
+    date:"2025-07-28",
+    summary:"Making more fixes.",
+    content:"Today was spent making finalizations to the debug process that I started last Saturday, although it didn't go all as planned due to the power interruption that happened today, but I'm trying my best to make the most of the fixes that I can do.",
+    images:[
+      "images/july28.jpg",
+      "images/july28-2.jpg"
+    ]
+  },
 ];
